@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flavor Dash - Home</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f8f9fa;
+            color: #333;
+        }
+
+        header {
+            background-color: #2c3e50;
+            color: white;
+        }
+
+        header img {
+            height: 50px;
+        }
+
+        nav a {
+            transition: background-color 0.3s ease;
+        }
+
+        nav a:hover {
+            background-color: #3498db;
+            border-radius: 4px;
+        }
+
+        .s-bar input[type="text"] {
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            background-color: #ecf0f1;
+            color: #2c3e50;
+            padding: 5px 10px;
+        }
+
+        .s-bar input[type="text"]::placeholder {
+            color: #7f8c8d;
+        }
+
+        .s-bar button {
+            background-color: #3498db;
+            border: none;
+            border-radius: 4px;
+            color: white;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            padding: 5px 10px;
+        }
+
+        .s-bar button:hover {
+            background-color: #2374d6b3;
+        }
+
+        .hero-section {
+            background-image: url('image1.jpg');
+            background-size: cover;
+            background-position: center;
+            color: wheat;
+            text-align: center;
+            padding: 100px 20px;
+        }
+
+        .featured-item {
+            background-color: #3498db;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            color: white;
+            transition: background-color 0.3s ease;
+        }
+
+        .featured-item:hover {
+            background-color: #2980b9;
+        }
+
+        footer {
+            background-color: #2c3e50;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+
+    <header class="d-flex align-items-center justify-content-between p-3">
+        <img src="logo.png" alt="Flavor Dash Logo">
+        <h1 class="h4">Flavor Dash</h1>
+    </header>
+
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container">
+            <a class="navbar-brand" href="#">Flavor Dash</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item"><a class="nav-link" href="#">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="Menu.html">Menu</a></li>
+                    <li class="nav-item"><a class="nav-link" href="Order.php">Order</a></li>
+                    <li class="nav-item"><a class="nav-link" href="Feedbackpage.html">Feedback</a></li>
+                    <li class="nav-item"><a class="nav-link" href="About_us.html">About Us</a></li>
+                </ul>
+                <form class="form-inline my-2 my-lg-0 s-bar">
+                    <input class="form-control mr-sm-2" type="text" placeholder="Search...">
+                    <button class="btn my-2 my-sm-0" type="button" onclick="search()">Search</button>
+                </form>
+                <button class="btn btn-primary ml-2" type="button" onclick="location.href='Login.html'">Login</button>
+            </div>
+        </div>
+    </nav>
+
+    <section class="hero-section d-flex align-items-center justify-content-center flex-column">
+        <h2>Discover a World of Flavors</h2>
+        <p>Order delicious food online and have it delivered to your doorstep.</p>
+    </section>
+
+    <section class="container my-5">
+        <div class="row">
+            <div class="col-md-4 mb-4">
+                <div class="card featured-item">
+                    <img src="biryani1.jpg" class="card-img-top" alt="Biryani">
+                    <div class="card-body">
+                        <h3 class="card-title">Biryani</h3>
+                        <p class="card-text">Savor the exquisite delight of our signature biryani, a harmonious fusion of fragrant basmati rice, tender meat, and a medley of aromatic spices, meticulously crafted to elevate your dining experience. Immerse yourself in the rich culinary heritage as each flavorful bite of our biryani unfolds a symphony of taste, bringing tradition and taste together on your plate.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 mb-4">
+                <div class="card featured-item">
+                    <img src="butter-chicken1.jpg" class="card-img-top" alt="Butter Chicken">
+                    <div class="card-body">
+                        <h3 class="card-title">Butter Chicken</h3>
+                        <p class="card-text">Savor the creamy indulgence of our Butter Chicken, a culinary masterpiece featuring tender chicken simmered in a rich, velvety tomato and butter-infused curry. Our signature dish is a perfect balance of aromatic spices, delivering an irresistible taste that embodies the essence of Indian comfort cuisine.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 mb-4">
+                <div class="card featured-item">
+                    <img src="pizza1.jpg" class="card-img-top" alt="Pizza">
+                    <div class="card-body">
+                        <h3 class="card-title">Pizza</h3>
+                        <p class="card-text">Experience pizza perfection with our artisanal creations, where the finest ingredients meet a crispy crust and a medley of mouthwatering toppings. Elevate your taste journey with our diverse pizza selection, a symphony of flavors that promises a slice of culinary delight in every bite.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        function search() {
+            var searchTerm = document.querySelector('input[type="text"]').value;
+            alert('You searched for: ' + searchTerm);
+        }
+
+        document.querySelectorAll('.featured-item').forEach(function(item) {
+            item.addEventListener('mouseover', function() {
+                item.style.backgroundColor = '#2980b9';
+            });
+
+            item.addEventListener('mouseout', function() {
+                item.style.backgroundColor = '#3498db';
+            });
+        });
+    </script>
+    <footer class="text-center py-3">
+        <p>&copy; 2024 Food Ordering Web. All rights reserved.</p>
+    </footer>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
